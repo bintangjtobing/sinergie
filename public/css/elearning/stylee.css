@@ -1,0 +1,134 @@
+:root {
+    --blue:
+        #007bff !important;
+    --indigo:
+        #6610f2 !important;
+    --purple:
+        #6f42c1 !important;
+    --pink:
+        #e83e8c !important;
+    --red:
+        #ff1520 !important;
+    --orange:
+        #f5af19 !important;
+    --yellow:
+        #f9f10b !important;
+    --green:
+        #28a745 !important;
+    --teal:
+        #20c997 !important;
+    --cyan:
+        #17a2b8 !important;
+    --white:
+        #fff !important;
+    --gray:
+        #6c757d !important;
+    --gray-dark:
+        #343a40 !important;
+    --primary:
+        #007bff !important;
+    --secondary:
+        #6c757d !important;
+    --success:
+        #28a745 !important;
+    --info:
+        #17a2b8 !important;
+    --warning:
+        #ffc107 !important;
+    --danger:
+        #dc3545 !important;
+    --light:
+        #f8f9fa !important;
+    --dark:
+        #343a40 !important;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Poppins" !important;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 0;
+    margin: 0;
+    line-height: 1.15 !important;
+}
+
+.bg-sinergie {
+    background: #ff1520;
+    background: -webkit-linear-gradient(to left, #f9f10b, #ff1520);
+    background: linear-gradient(to left, #f9f10b, #ff1520);
+}
+
+.imgmenu {
+    background-color: #f9f10b;
+    -webkit-box-shadow: 1px 4px 8px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 4px 8px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 4px 8px -1px rgba(0, 0, 0, 0.75);
+}
+
+.menubig {
+    max-height: 90px;
+}
+
+.jadwaltryout {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.datetryout {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.loginsiswa {
+    width: 100% !important;
+}
+
+.field-icon {
+    float: right;
+    margin-right: 20px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-sinergie {
+    background: #fff;
+    border: 1px solid #ff1520 !important;
+    width: 100% !important;
+    color: #ff1520 !important;
+}
+
+.btn-sinergie:hover {
+    color: #fff !important;
+    cursor: pointer;
+    background: #ff1520;
+    background: -webkit-linear-gradient(to left, #f9f10b, #ff1520);
+    background: linear-gradient(to left, #f9f10b, #ff1520) !important;
+    border: 0px !important;
+    transition: .3s ease !important;
+}
+
+.subhead li {
+    margin-top: 10px;
+}
+
+.footersec {
+    height: 50px;
+    background: #ff1520;
+    background: -webkit-linear-gradient(to right, #f9f10b, #ff1520);
+    background: linear-gradient(to right, #f9f10b, #ff1520);
+}
+
+.footersec p {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #2b2b2b;
+}
