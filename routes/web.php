@@ -63,9 +63,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/member', 'MemberController@index');
     Route::get('/email', 'DashboardController@email');
     Route::post('/send', 'DashboardController@sendEmail');
-    Route::get('/subpelajaran', 'MateriController@subpelajaran');
-
-
+    Route::get('/soal', 'KelasController@soal');
+    Route::get('/bahan-ajar', 'KelasController@bahanajar');
 
     // ROUTE VIEW ADD DATA
     Route::get('/additem', 'ItemController@addview');
@@ -78,6 +77,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/kategori/addnew', 'KategoriController@addnew');
     Route::post('/member/addnew', 'MemberController@addnewmember');
     Route::post('/subpelajaran/addnew', 'KelasController@addnewsub');
+    Route::get('/tambah-data-pelajaran/{subkelas_id}', 'KelasController@formdata');
 
     // ROUTE GET (EDIT ROUTE)
     Route::get('item/{item_id}/edit', 'ItemController@edit');

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\KelasDB;
 use App\MateriDB;
 use App\subKelas;
+use App\bahanAjarDB;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -60,6 +61,11 @@ class KelasController extends Controller
         $datasub->materi_id = $request->materi_id;
         $datasub->created_by = auth()->user()->nama_lengkap;
         $datasub->updated_by = auth()->user()->nama_lengkap;
+        if ($request->hasFile('img_sub')) {
+            $request->file('img_sub')->move(public_path('file/kelas/' . $request->nama_mapel), $request->file('img_sub')->getClientOriginalName());
+            $datasub->img_sub = $request->file('img_sub')->getClientOriginalName();
+        }
+        // dd($datasub);
         $datasub->save();
 
         return back()->with('sukses', 'Materi sub pelajaran berhasil ditambahkan! Silahkan isi soal soal untuk materi tersebut.');
@@ -104,5 +110,28 @@ class KelasController extends Controller
                 return back()->with('sukses', 'Sub pelajaran has been successfully deleted!');
             }
         }
+    }
+    // MATERI PEMBELAJARAN
+    public function soal()
+    {
+        return view('kelas.soal');
+    }
+    public function bahanajar()
+    {
+        $datasub = DB::table('sub_kelas')
+            ->join('kelas', 'sub_kelas.kelas_id', '=', 'kelas.kelas_id')
+            ->join('materis', 'sub_kelas.materi_id', '=', 'materis.materi_id')
+            ->select('sub_kelas.*', 'kelas.*', 'materis.*')
+            ->get();
+        return view('kelas.bahanajar', ['datasub' => $datasub]);
+    }
+    public function formdata($subkelas_id)
+    {
+        $datasub = DB::table('sub_kelas')
+            ->join('kelas', 'sub_kelas.kelas_id', '=', 'kelas.kelas_id')
+            ->where('sub_kelas.subkelas_id', '=', $subkelas_id)
+            ->select('sub_kelas.*')
+            ->get();
+        return view('kelas.materiform', ['datasub' => $datasub]);
     }
 }

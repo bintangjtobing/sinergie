@@ -8,7 +8,7 @@ class subKelas extends Model
 {
     protected $table = 'sub_kelas';
     protected $primaryKey = 'subkelas_id';
-    protected $fillable = ['nama_mapel', 'kelas_id'];
+    protected $fillable = ['nama_mapel', 'kelas_id', 'img_sub'];
 
     public function Murid()
     {
